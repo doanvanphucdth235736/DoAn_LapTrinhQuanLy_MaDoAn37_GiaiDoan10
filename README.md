@@ -18,7 +18,7 @@ Tương tác dữ liệu (ORM): Entity Framework Core (EF Core)
 
 Xuất bản báo cáo: Microsoft ReportViewer (RDLC)
 
-4 Kiến trúc hệ thống
+4. Kiến trúc hệ thống
 Dự án được xây dựng dựa trên mô hình kết nối dữ liệu hiện đại, đảm bảo tính toàn vẹn và tốc độ xử lý:
 Giao diện người dùng: Tiếp nhận thông tin qua các Form nhập liệu.
 Tầng xử lý (Logic): Sử dụng C# để tính toán hóa đơn và điều phối trạng thái phòng.
