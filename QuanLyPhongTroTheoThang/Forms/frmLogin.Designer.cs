@@ -36,6 +36,7 @@
             btnLogin = new Button();
             txtPassword = new TextBox();
             txtUsername = new TextBox();
+            button1 = new Button();
             pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -45,6 +46,7 @@
             // pnlLogin
             // 
             pnlLogin.BackColor = SystemColors.Window;
+            pnlLogin.Controls.Add(button1);
             pnlLogin.Controls.Add(pictureBox3);
             pnlLogin.Controls.Add(pictureBox2);
             pnlLogin.Controls.Add(pictureBox1);
@@ -101,7 +103,7 @@
             // 
             btnLogin.Anchor = AnchorStyles.None;
             btnLogin.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.Location = new Point(76, 158);
+            btnLogin.Location = new Point(75, 146);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(150, 63);
             btnLogin.TabIndex = 2;
@@ -112,10 +114,10 @@
             // txtPassword
             // 
             txtPassword.Anchor = AnchorStyles.None;
-            txtPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(64, 93);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(208, 38);
+            txtPassword.Size = new Size(208, 31);
             txtPassword.TabIndex = 1;
             txtPassword.Enter += txtPassword_Enter;
             txtPassword.Leave += txtPassword_Leave;
@@ -123,13 +125,23 @@
             // txtUsername
             // 
             txtUsername.Anchor = AnchorStyles.None;
-            txtUsername.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsername.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Location = new Point(64, 42);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(208, 38);
+            txtUsername.Size = new Size(208, 31);
             txtUsername.TabIndex = 0;
             txtUsername.Enter += txtUsername_Enter;
             txtUsername.Leave += txtUsername_Leave;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(107, 227);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Trở Lại";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // frmLogin
             // 
@@ -139,7 +151,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(pnlLogin);
             Name = "frmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Nhập";
+            WindowState = FormWindowState.Maximized;
             Load += frmLogin_Load;
             Resize += frmLogin_Resize;
             pnlLogin.ResumeLayout(false);
@@ -159,5 +173,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Button button1;
     }
 }

@@ -35,6 +35,7 @@
             mnuDoiMatKhau = new ToolStripMenuItem();
             mnuThoat = new ToolStripMenuItem();
             mnuQuanLy = new ToolStripMenuItem();
+            sơĐồPhòngToolStripMenuItem = new ToolStripMenuItem();
             mnuKhachHang = new ToolStripMenuItem();
             mnuPhong = new ToolStripMenuItem();
             mnuHopDong = new ToolStripMenuItem();
@@ -44,7 +45,6 @@
             mnuThongKeBill = new ToolStripMenuItem();
             mnuThongKeHopDong = new ToolStripMenuItem();
             mnuTroGiup = new ToolStripMenuItem();
-            mnuHuongDanSuDung = new ToolStripMenuItem();
             mnuThongTinPhanMem = new ToolStripMenuItem();
             StatusStrip = new StatusStrip();
             lblTrangThai = new ToolStripStatusLabel();
@@ -101,44 +101,51 @@
             // 
             // mnuQuanLy
             // 
-            mnuQuanLy.DropDownItems.AddRange(new ToolStripItem[] { mnuKhachHang, mnuPhong, mnuHopDong, mnuBill, mnuNhanSu });
+            mnuQuanLy.DropDownItems.AddRange(new ToolStripItem[] { sơĐồPhòngToolStripMenuItem, mnuKhachHang, mnuPhong, mnuHopDong, mnuBill, mnuNhanSu });
             mnuQuanLy.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuQuanLy.Name = "mnuQuanLy";
             mnuQuanLy.Size = new Size(90, 29);
             mnuQuanLy.Text = "Quản Lý";
             // 
+            // sơĐồPhòngToolStripMenuItem
+            // 
+            sơĐồPhòngToolStripMenuItem.Name = "sơĐồPhòngToolStripMenuItem";
+            sơĐồPhòngToolStripMenuItem.Size = new Size(217, 30);
+            sơĐồPhòngToolStripMenuItem.Text = "Sơ Đồ Phòng...";
+            sơĐồPhòngToolStripMenuItem.Click += sơĐồPhòngToolStripMenuItem_Click;
+            // 
             // mnuKhachHang
             // 
             mnuKhachHang.Name = "mnuKhachHang";
-            mnuKhachHang.Size = new Size(205, 30);
+            mnuKhachHang.Size = new Size(217, 30);
             mnuKhachHang.Text = "Khách Hàng...";
             mnuKhachHang.Click += mnuKhachHang_Click;
             // 
             // mnuPhong
             // 
             mnuPhong.Name = "mnuPhong";
-            mnuPhong.Size = new Size(205, 30);
+            mnuPhong.Size = new Size(217, 30);
             mnuPhong.Text = "Phòng...";
             mnuPhong.Click += mnuPhong_Click;
             // 
             // mnuHopDong
             // 
             mnuHopDong.Name = "mnuHopDong";
-            mnuHopDong.Size = new Size(205, 30);
+            mnuHopDong.Size = new Size(217, 30);
             mnuHopDong.Text = "Hợp Đồng...";
             mnuHopDong.Click += mnuHopDong_Click;
             // 
             // mnuBill
             // 
             mnuBill.Name = "mnuBill";
-            mnuBill.Size = new Size(205, 30);
+            mnuBill.Size = new Size(217, 30);
             mnuBill.Text = "Hóa Đơn...";
             mnuBill.Click += mnuBill_Click;
             // 
             // mnuNhanSu
             // 
             mnuNhanSu.Name = "mnuNhanSu";
-            mnuNhanSu.Size = new Size(205, 30);
+            mnuNhanSu.Size = new Size(217, 30);
             mnuNhanSu.Text = "Nhân Sự...";
             mnuNhanSu.Click += mnuNhanSu_Click;
             // 
@@ -166,23 +173,16 @@
             // 
             // mnuTroGiup
             // 
-            mnuTroGiup.DropDownItems.AddRange(new ToolStripItem[] { mnuHuongDanSuDung, mnuThongTinPhanMem });
+            mnuTroGiup.DropDownItems.AddRange(new ToolStripItem[] { mnuThongTinPhanMem });
             mnuTroGiup.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuTroGiup.Name = "mnuTroGiup";
             mnuTroGiup.Size = new Size(92, 29);
             mnuTroGiup.Text = "Trợ Giúp";
             // 
-            // mnuHuongDanSuDung
-            // 
-            mnuHuongDanSuDung.Name = "mnuHuongDanSuDung";
-            mnuHuongDanSuDung.Size = new Size(455, 30);
-            mnuHuongDanSuDung.Text = "Hướng dẫn sử dụng (ShortcutKeys: Ctrl + F1)";
-            mnuHuongDanSuDung.Click += mnuHuongDanSuDung_Click;
-            // 
             // mnuThongTinPhanMem
             // 
             mnuThongTinPhanMem.Name = "mnuThongTinPhanMem";
-            mnuThongTinPhanMem.Size = new Size(455, 30);
+            mnuThongTinPhanMem.Size = new Size(277, 30);
             mnuThongTinPhanMem.Text = "Thông tin phần mềm...";
             mnuThongTinPhanMem.Click += mnuThongTinPhanMem_Click;
             // 
@@ -220,14 +220,19 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            BackgroundImage = Properties.Resources.BackGround;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(StatusStrip);
             Controls.Add(MenuStrip);
+            DoubleBuffered = true;
             IsMdiContainer = true;
             MainMenuStrip = MenuStrip;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Trang Chủ";
+            WindowState = FormWindowState.Maximized;
             FormClosing += frmMain_FormClosing;
             Load += frmMain_Load;
             MenuStrip.ResumeLayout(false);
@@ -262,5 +267,6 @@
         private ToolStripStatusLabel lblTrangThai;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel lblLienKet;
+        private ToolStripMenuItem sơĐồPhòngToolStripMenuItem;
     }
 }
